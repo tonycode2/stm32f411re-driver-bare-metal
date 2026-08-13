@@ -82,26 +82,45 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 }
 void GPIO_Deinit(GPIOx_Reg_t *gGPIOx)
 {
-
+	switch((uint32_t)gGPIOx)
+	{
+	case(uint32_t)GPIOA: GPIOA_RCC_RESET(); break;
+	case(uint32_t)GPIOB: GPIOB_RCC_RESET(); break;
+	case(uint32_t)GPIOC: GPIOC_RCC_RESET(); break;
+	case(uint32_t)GPIOD: GPIOD_RCC_RESET(); break;
+	case(uint32_t)GPIOE: GPIOE_RCC_RESET(); break;
+	case(uint32_t)GPIOH: GPIOH_RCC_RESET(); break;
+	}
 }
 
 uint8_t GPIO_ReadFromInputPin(GPIOx_Reg_t *pGPIOx, uint8_t PinNumber)
 {
-
+	uint8_t value;
+	value = (uint8_t)((pGPIOx->IDR >> PinNumber) & 0x00000001);
+	return value;
 }
+
 uint16_t GPIO_ReadFromInputPort(GPIOx_Reg_t *pGPIOx)
 {
-
+	uint16_t value;
+	value = (uint16_t)pGPIOx->IDR;
+	return value;
 }
 void GPIO_WriteToOutputPin(GPIOx_Reg_t *pGPIOx, uint8_t PinNumber, uint8_t Value)
 {
-
+	if(Value == GPIO_PIN_SET)
+	{
+		pGPIOx->ODR |= (1 << PinNumber);
+	}else
+	{
+		pGPIOx->ODR &= ~(1 << PinNumber);
+	}
 }
 void GPIO_WriteToOutputPort(GPIOx_Reg_t *pGPIOx, uint16_t Value)
 {
-
+	pGPIOx->ODR |= Value;
 }
 void GPIO_ToggleOutputPort(GPIOx_Reg_t *pGPIOx, uint8_t PinNumber)
 {
-
+	pGPIOx->ODR ^= (1 << PinNumber);
 }

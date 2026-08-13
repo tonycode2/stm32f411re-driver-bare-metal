@@ -234,4 +234,6 @@ typedef struct
 #define RESET								LOW
 #define ENABLE								HIGH
 #define DISABLE								LOW
+#define GPIO_PIN_SET						HIGH
+#define GPIO_PIN_RESET						LOW
 #endif /* INC_STM32F411RE_H_ */
