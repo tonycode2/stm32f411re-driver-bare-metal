@@ -1,0 +1,8 @@
+../drivers/Src/stm32f411re_gpio_driver.c:12:6:GPIO_PeripheralClockControl	16	static
+../drivers/Src/stm32f411re_gpio_driver.c:40:6:GPIO_Init	24	static
+../drivers/Src/stm32f411re_gpio_driver.c:83:6:GPIO_Deinit	16	static
+../drivers/Src/stm32f411re_gpio_driver.c:88:9:GPIO_ReadFromInputPin	16	static
+../drivers/Src/stm32f411re_gpio_driver.c:92:10:GPIO_ReadFromInputPort	16	static
+../drivers/Src/stm32f411re_gpio_driver.c:96:6:GPIO_WriteToOutputPin	16	static
+../drivers/Src/stm32f411re_gpio_driver.c:100:6:GPIO_WriteToOutputPort	16	static
+../drivers/Src/stm32f411re_gpio_driver.c:104:6:GPIO_ToggleOutputPort	16	static

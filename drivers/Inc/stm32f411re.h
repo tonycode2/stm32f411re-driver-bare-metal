@@ -8,6 +8,8 @@
 #ifndef INC_STM32F411RE_H_
 #define INC_STM32F411RE_H_
 
+#include<stdint.h>
+
 #define __vo volatile
 //-----------------------------------------------------------MEMORY ADDRESSES-----------------------------------------------------------
 //Base memory general addresses
